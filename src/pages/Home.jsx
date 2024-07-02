@@ -1,24 +1,15 @@
-import MenuGroup from "../components/MenuGroup";
 import '../Home.css';
+import UFTable from '../components/UFTable';
 
 export const Home = () => {
   return (
-    // <div className="home-container">
-    //   <div>
-    //     <MenuGroup/>
-    //   </div>
-    // </div>
-    <div className="home-container">
-      <aside className="sidebar">
-        <MenuGroup />
-      </aside>
-      <main className="main-content">
-        <div className="button-container">
-        </div>
+    <div className="Home">
+      <header>
+        <h1>Valores y Fechas UF 2024</h1>
+      </header>
+      <main>
+        <UFTable/>
       </main>
-      <footer className="footer">
-        Footer Content
-      </footer>
     </div>
   );
 };
