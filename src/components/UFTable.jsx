@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 const UFTable = () => {
   const [ufData, setUfData] = useState([]);
@@ -11,9 +11,10 @@ const UFTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const formatedDate = selectedDate.format('DD-MM-YYYY');
+        const formatedDate = selectedDate.format("DD-MM-YYYY");
         console.log("Fecha seleccionada:", formatedDate);
-        const response = await fetch(`https://mindicador.cl/api/uf/${formatedDate}`
+        const response = await fetch(
+          `https://mindicador.cl/api/uf/${formatedDate}`
         );
 
         if (!response.ok) {
@@ -30,7 +31,7 @@ const UFTable = () => {
           }),
           unit: data.unidad_medida,
         }));
-        
+
         setUfData(formattedData);
         setLoading(false);
       } catch (error) {
@@ -55,7 +56,16 @@ const UFTable = () => {
 
   return (
     <div>
-      <input type="date" value={selectedDate.format('DD-MM-YYYY')} onChange={handleDateSelect} />
+      <div
+        style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}
+      >
+        <span style={{ marginRight: "10px" }}>Selecciona una fecha:</span>
+        <input
+          type="date"
+          value={selectedDate.format("DD-MM-YYYY")}
+          onChange={handleDateSelect}
+        />
+      </div>
       <table>
         <thead>
           <tr>
