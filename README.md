@@ -1,8 +1,8 @@
-# React + Vite
+Aplicacion de prueba, usando React consumiendo una API
+La api que estamos utilizando, es del gobierno que nos trae el valor uf segun la fecha que solicitemos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://www.mindicador.cl/
 
-Currently, two official plugins are available:
+La aplicacion esta levantada en Netlify, en la siguiente ruta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://gleeful-crisp-0586a7.netlify.app/

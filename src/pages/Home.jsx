@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div className="Home">
       <header>
-        <h1>Valores y Fechas UF 2024</h1>
+        <h1>Valores y Fechas UF</h1>
       </header>
       <main>
         <UFTable />
