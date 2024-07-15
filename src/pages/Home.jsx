@@ -1,5 +1,6 @@
-import '../Home.css';
-import UFTable from '../components/UFTable';
+import UFTable from "../components/UFTable";
+import "../Home.css";
+
 
 export const Home = () => {
   return (
@@ -8,7 +9,7 @@ export const Home = () => {
         <h1>Valores y Fechas UF 2024</h1>
       </header>
       <main>
-        <UFTable/>
+        <UFTable />
       </main>
     </div>
   );

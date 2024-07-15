@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
-import BasicDatePicker from "./BasicDatePicker";
 import dayjs from 'dayjs';
 
 const UFTable = () => {
@@ -12,12 +11,15 @@ const UFTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        selectedDate.format('DD-MM-YYYY');
-        console.log('fecha: ',selectedDate);
-        const response = await fetch(`https://mindicador.cl/api/uf/${selectedDate}`);
+        const formatedDate = selectedDate.format('DD-MM-YYYY');
+        console.log("Fecha seleccionada:", formatedDate);
+        const response = await fetch(`https://mindicador.cl/api/uf/${formatedDate}`
+        );
+
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
         }
+
         const data = await response.json();
 
         const formattedData = data.serie.map((item) => ({
@@ -28,6 +30,7 @@ const UFTable = () => {
           }),
           unit: data.unidad_medida,
         }));
+        
         setUfData(formattedData);
         setLoading(false);
       } catch (error) {
@@ -38,10 +41,6 @@ const UFTable = () => {
     fetchData();
   }, [selectedDate]);
 
-  const handleDateSelect = (newDate) => {
-    setSelectedDate(dayjs(newDate));
-  };
-
   if (loading) {
     return <div>Cargando datos...</div>;
   }
@@ -50,9 +49,13 @@ const UFTable = () => {
     return <div>Error: {error}</div>;
   }
 
+  const handleDateSelect = (event) => {
+    setSelectedDate(dayjs(event.target.value));
+  };
+
   return (
     <div>
-      <BasicDatePicker selectedDate={selectedDate} onDateChange={handleDateSelect} />
+      <input type="date" value={selectedDate.format('DD-MM-YYYY')} onChange={handleDateSelect} />
       <table>
         <thead>
           <tr>
