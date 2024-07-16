@@ -5,4 +5,4 @@ https://www.mindicador.cl/
 
 La aplicacion esta levantada en Netlify, en la siguiente ruta.
 
-https://gleeful-crisp-0586a7.netlify.app/d
+https://gleeful-crisp-0586a7.netlify.app/
